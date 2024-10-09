@@ -9,22 +9,33 @@ const BookYourCall = () => {
   // This ensures the Calendly widget is only rendered on the client side
   useEffect(() => {
     setIsClient(true);
+
+    // Load the Calendly widget script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up the script when component unmounts
+      document.body.removeChild(script);
+    };
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-blue-900 py-12 flex justify-center items-center bg-cover bg-center"
-      style={{ backgroundImage: 'url("/images/bg6.png")' }} 
+    <div className=" bg-gradient-to-b from-black to-blue-900 py-12 flex justify-center items-center bg-cover bg-center"
+      style={{ backgroundImage: 'url("/images/bg6.png")' }}
     >
       {/* Main Container */}
       <div className="w-full max-w-6xl flex flex-col lg:flex-row justify-between items-end space-y-12 lg:space-y-0 lg:space-x-16 p-8">
         
         {/* Left Section (Calendly) with 60% width on large screens */}
-        <div className="flex-1 lg:flex-[0.6] w-full border">
+        <div className="flex-1 lg:flex-[0.6] w-full">
           <h1 className="text-5xl font-bold text-white mb-8">BOOK YOUR CALL NOW</h1>
 
           {/* Only render the Calendly widget after the client-side is initialized */}
           {isClient && (
-            <div className="calendly-inline-widget" data-url="https://calendly.com/YOUR-CALENDLY-URL" style={{ minWidth: '320px', height: '630px' }}></div>
+            <div className="calendly-inline-widget" data-url="https://calendly.com/ytautomationtonmoy/1-1-on-strategy-call-with-tonmoy?" style={{ minWidth: '350px', height: '1010px' }}></div>
           )}
         </div>
 

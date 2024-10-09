@@ -13,7 +13,7 @@ const FAQItem = ({ question, answer }) => {
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h2 className="text-2xl font-bold text-white">{question}</h2>
+        <h2 className="text-2xl font-bold text-white text-left">{question}</h2> {/* Left-aligned */}
         {isOpen ? (
           <ChevronUpIcon className="w-6 h-6 text-white" />
         ) : (
@@ -23,7 +23,7 @@ const FAQItem = ({ question, answer }) => {
 
       {/* Answer Section (Collapsible) */}
       {isOpen && (
-        <p className="mt-4 text-lg text-white leading-relaxed">
+        <p className="mt-4 text-lg text-white leading-relaxed text-left"> {/* Left-aligned */}
           {answer}
         </p>
       )}
@@ -56,17 +56,32 @@ const FAQ = () => {
       style={{ backgroundImage: 'url("/images/bg5.png")' }}
     >
       {/* Title */}
-      <div className="text-center mb-8">
-        <h1 className="text-5xl font-bold text-white mb-4">FREQUENTLY ASKED QUESTIONS</h1>
-        <div className="flex justify-center items-center">
-          <div className="border-t-2 border-white w-12 mr-2"></div>
-          <div className="text-white">•</div>
-          <div className="border-t-2 border-white w-12 ml-2"></div>
+      <div className="w-full max-w-6xl mb-8 text-left">
+        <h1 className="text-5xl font-bold text-white mb-4">FREQUENTLY ASKED <br/> QUESTIONS</h1>
+        <div className="flex items-center justify-start -mt-[10px]">
+          {/* First part of the underline */}
+          <div
+            className="h-1"
+            style={{
+              background: 'linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1))',
+              width: '250px',
+            }}
+          ></div>
+          {/* Dot in the center */}
+          <div className="text-white mx-2">•</div>
+          {/* Second part of the underline */}
+          <div
+            className="h-1"
+            style={{
+              background: 'linear-gradient(to left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1))',
+              width: '250px',
+            }}
+          ></div>
         </div>
       </div>
 
       {/* FAQ Items */}
-      <div className="w-full max-w-3xl">
+      <div className="w-full max-w-3xl text-left"> {/* Make sure FAQ items are left aligned */}
         {faqData.map((faq, index) => (
           <FAQItem key={index} question={faq.question} answer={faq.answer} />
         ))}

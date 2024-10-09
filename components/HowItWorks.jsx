@@ -11,11 +11,26 @@ const HowItWorks = () => {
         {/* Left Section: How It Works Text (40%) */}
         <div className="flex-[0.4] lg:mr-8 text-left">
           <h1 className="text-5xl font-bold mb-4">HOW IT WORKS?</h1>
-          <div className="flex items-center mb-4">
-            <div className="border-t-2 border-white flex-1" />
-            <div className="mx-2">•</div>
-            <div className="border-t-2 border-white flex-1" />
-          </div>
+          <div className="flex items-center justify-start -mt-[10px]">
+          {/* First part of the underline */}
+          <div
+            className="h-1"
+            style={{
+              background: 'linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1))',
+              width: '200px',
+            }}
+          ></div>
+          {/* Dot in the center */}
+          <div className="text-white mx-2">•</div>
+          {/* Second part of the underline */}
+          <div
+            className="h-1"
+            style={{
+              background: 'linear-gradient(to left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1))',
+              width: '200px',
+            }}
+          ></div>
+        </div>
           <p className="mb-4 text-lg leading-relaxed">
             Our professional team takes care of everything. They create the videos, including writing scripts, recording voiceovers, editing, and designing thumbnails. They also handle uploading the videos to YouTube, ensuring everything is optimized with proper SEO and research.
           </p>
@@ -25,7 +40,9 @@ const HowItWorks = () => {
         </div>
 
         {/* Right Section: Features (60%) */}
-        <div className="flex-[0.6] p-8 bg-gradient-to-b from-[#1A1A1A] to-[#2A2A2A] rounded-3xl shadow-lg relative border-t-2 border-b-2 border-l-2 border-r-transparent border-gray-400 w-full lg:w-[130%] transform translate-x-[10%]">
+        <div className="flex-[0.6] p-8 rounded-3xl shadow-lg relative border-t-2 border-b-2 border-l-2 border-r-transparent border-gray-400 w-full lg:w-[130%] transform translate-x-[10%]"
+  style={{ background: 'rgba(26, 26, 26, 0.1)' }} // 10% transparency
+>
           <div className="space-y-8">
 
             {/* Feature 1 */}
