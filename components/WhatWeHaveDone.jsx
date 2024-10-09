@@ -1,7 +1,15 @@
-// components/WhatWeHaveDone.jsx
+"use client";
+
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 const WhatWeHaveDone = () => {
+
+  const router = useRouter();
+
+  const navigateTo = (path) => {
+    router.push(path);
+  };
   return (
     <div
       className="min-h-screen bg-gradient-to-b from-black to-blue-900 py-12 flex flex-col items-center bg-cover bg-center px-4 sm:px-6 lg:px-8"
@@ -42,6 +50,7 @@ const WhatWeHaveDone = () => {
         <img
           src="/images/result-button-lg.png"
           alt="Results"
+          onClick={() => navigateTo('/results')}
           className="object-contain w-[250px] sm:w-[300px] lg:w-[350px] cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-lg"
         />
 
@@ -49,6 +58,7 @@ const WhatWeHaveDone = () => {
         <img
           src="/images/life-button-lg.png"
           alt="Life"
+          onClick={() => navigateTo('/results')}
           className="object-contain w-[250px] sm:w-[300px] lg:w-[350px] cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-lg"
         />
 
@@ -56,6 +66,7 @@ const WhatWeHaveDone = () => {
         <img
           src="/images/testimonial-button-lg.png"
           alt="Testimonials"
+          onClick={() => navigateTo('/results')}
           className="object-contain w-[250px] sm:w-[300px] lg:w-[350px] cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-lg"
         />
       </div>
