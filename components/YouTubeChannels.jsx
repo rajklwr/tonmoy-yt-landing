@@ -1,6 +1,6 @@
 import React from 'react';
 
-const YouTubeChannels = () => {
+const YouTubeChannels = ({ scrollToBookYourCall }) => {
   return (
     <div
       className="min-h-screen bg-gradient-to-r from-orange-500 to-black flex items-center justify-center p-8 bg-cover bg-center"
@@ -31,7 +31,9 @@ const YouTubeChannels = () => {
 
           {/* Call to Action Button Positioned Bottom Left */}
           <div className="ml-2 mt-2">
-            <button className="px-8 py-4 bg-white text-orange-600 font-bold rounded-lg shadow-lg hover:bg-gray-200 transition">
+            <button
+            onClick={scrollToBookYourCall}
+             className="px-8 py-4 bg-white text-orange-600 font-bold rounded-lg shadow-lg hover:bg-gray-200 transition">
               Book A Call
             </button>
           </div>

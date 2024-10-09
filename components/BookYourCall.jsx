@@ -55,10 +55,10 @@ const BookYourCall = () => {
           <div>
             <h2 className="text-lg font-bold">Social</h2>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/aryan.drx" target="_blank" rel="noopener noreferrer">
                 <FaFacebook className="w-8 h-8 text-white hover:text-blue-600" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/tonmoyghosh__" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="w-8 h-8 text-white hover:text-pink-500" />
               </a>
             </div>

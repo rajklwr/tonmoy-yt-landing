@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useRef } from 'react';
 import YouTubeAnalytics from '@/components/YouTubeAnalytics';
 import YouTubeChannels from '@/components/YouTubeChannels';
 import HowItWorks from '@/components/HowItWorks';
@@ -7,14 +9,26 @@ import FAQ from '@/components/FAQ';
 import BookYourCall from '@/components/BookYourCall';
 
 export default function HomePage() {
+  const bookCallRef = useRef(null); // Create a reference for the BookYourCall component
+
+  const scrollToBookYourCall = () => {
+    // Smooth scroll to BookYourCall section
+    if (bookCallRef.current) {
+      bookCallRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div>
       <YouTubeAnalytics />
-      <YouTubeChannels/>
-      <HowItWorks/>
-      <WhatWeHaveDone/>
-      <FAQ/>
-      <BookYourCall/>
+      <YouTubeChannels scrollToBookYourCall={scrollToBookYourCall} /> {/* Pass the scroll function as a prop */}
+      <HowItWorks />
+      <WhatWeHaveDone />
+      <FAQ />
+      {/* Reference the BookYourCall component */}
+      <div ref={bookCallRef}>
+        <BookYourCall />
+      </div>
     </div>
   );
 }
