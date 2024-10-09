@@ -2,6 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Global styles for the button */
+
+.cta-button {
+  position: relative;
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+  padding: 10px 20px;
+  background-color: white;
+  color: #ff6600; /* Button text color */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px solid transparent; /* Initially transparent border */
+  border-color: #ff6600; /* Button text color for the snake-like border */
+  border-radius: 8px; /* Match the button border radius */
+  z-index: 1;
+  box-sizing: border-box;
+  animation: snake-border 3s linear infinite; /* Continuous snake movement */
+}
+
+/* Keyframes for moving border along the edges */
+@keyframes snake-border {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0); /* Start with no border visible */
+  }
+  25% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Top edge border */
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%); /* Right edge border */
+  }
+  75% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Bottom edge border */
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0); /* Full border visible */
+  }
+}
+
+
+
+
+
+
+/* Container to hold the image and the animated border */
+.image-border-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 25px;
+  overflow: hidden; /* Ensures the border stays within bounds */
+}
+
+/* Adjust the size of the ::before pseudo-element to be smaller, creating the inner border */
+.image-border-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 5px; /* Move the border 5px inside */
+  left: 5px; /* Move the border 5px inside */
+  right: 5px; /* Move the border 5px inside */
+  bottom: 5px; /* Move the border 5px inside */
+  border: 2px solid transparent; /* Initially no visible border */
+  border-color: #fff; /* The color of the animated border */
+  border-radius: 25px; /* Match the image border radius */
+  z-index: 1;
+  box-sizing: border-box;
+  animation: snake-border-image 10s linear infinite; /* Continuous snake movement */
+}
+
+/* Keyframes for moving border along the edges */
+@keyframes snake-border-image {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0); /* Start with no border visible */
+  }
+  25% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Top edge border */
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%); /* Right edge border */
+  }
+  75% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Bottom edge border */
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0); /* Full border visible */
+  }
+}
+
+/* Hover effect to scale the image and add shadow */
+.image-border-wrapper:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
 @font-face {
   font-family: 'Monstrate';
   src: url('./fonts/Montserrat-Bold.ttf') format('truetype'); /* Update path based on where you saved the font */

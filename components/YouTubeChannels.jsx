@@ -5,12 +5,18 @@ const YouTubeChannels = ({ scrollToBookYourCall }) => {
   return (
     <div
       className="min-h-screen bg-gradient-to-r from-orange-500 to-black flex items-center justify-center p-4 sm:p-8 bg-cover bg-center"
-      style={{ backgroundImage: 'url("/images/bg2.png")' }} // Ensure this is the correct path to your background
+      style={{
+        backgroundImage: 'url("/images/bg2.png")', // Ensure this is the correct path to your background
+        backgroundAttachment: 'fixed', // Makes the background image stay fixed
+      }}
     >
       <div className="max-w-6xl w-full flex flex-col lg:flex-row justify-between items-center p-4 sm:p-6 lg:p-12 text-white">
         
         {/* Left Section: Text Content with rounded container */}
-        <div className="flex-1 p-4 sm:p-6 lg:p-8 bg-gradient-to-b from-white/30 to-yellow-500/40 rounded-2xl shadow-2xl lg:mr-8 lg:max-w-[55%] relative border-2 border-white">
+        <div
+          className="flex-1 p-4 sm:p-6 lg:p-8 bg-gradient-to-b from-white/30 to-yellow-500/40 rounded-2xl shadow-2xl lg:mr-8 lg:max-w-[55%] relative border-2 border-white"
+          style={{ transform: 'translateY(20px)', opacity: 0, transition: 'all 0.8s ease-in-out', animation: 'moveInUp 1s forwards' }} // Subtle move-in effect on load
+        >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             What is Done-For-You Channels?
           </h1>
@@ -23,23 +29,43 @@ const YouTubeChannels = ({ scrollToBookYourCall }) => {
         </div>
 
         {/* Right Section: Image with Button */}
-        <div className="flex-1 mt-8 lg:mt-0 relative">
+        <div
+          className="flex-1 mt-8 lg:mt-0 relative"
+          style={{ transform: 'translateY(20px)', opacity: 0, transition: 'all 0.8s ease-in-out', animation: 'moveInUp 1.2s forwards' }} // Slight delay for staggered motion
+        >
           <img
             src="/images/our-product.png" // Ensure the correct path to your image
             alt="What is Done-For-You Channels"
-            className="object-contain w-full sm:w-[400px] lg:w-[500px] h-auto mx-auto" // Adjust width for responsiveness
+            className="object-contain w-full sm:w-[400px] lg:w-[500px] h-auto mx-auto"
           />
 
           {/* Call to Action Button Positioned Bottom Left */}
           <div className="mt-4 sm:mt-6 lg:mt-8 flex justify-center">
-            <button
-              onClick={scrollToBookYourCall}
-              className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-orange-600 font-bold rounded-lg shadow-lg hover:bg-gray-200 transition">
-              Book A Call
-            </button>
+          <button
+  onClick={scrollToBookYourCall}
+  className="cta-button px-6 py-3 sm:px-8 sm:py-4 bg-white text-orange-600 font-bold rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300 relative overflow-hidden"
+>
+  Book A Call
+</button>
+
+
           </div>
         </div>
       </div>
+
+      {/* Keyframes for minimal movement */}
+      <style jsx>{`
+        @keyframes moveInUp {
+          0% {
+            transform: translateY(50px);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </div>
   );
 };
