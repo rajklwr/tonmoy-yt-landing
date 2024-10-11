@@ -133,7 +133,6 @@ const StoryView = ({ dummyStories }) => {
             src={selectedStory.imageUrl}
             className="w-full h-full object-cover"
             autoPlay
-            muted
             playsInline
             onEnded={goToNextStory} // Go to the next story when the video ends
             onLoadedData={() => setIsLoading(false)} // Hide loader once video is loaded
