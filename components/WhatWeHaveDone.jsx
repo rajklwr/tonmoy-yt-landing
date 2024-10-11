@@ -41,28 +41,43 @@ const WhatWeHaveDone = () => {
 
       {/* Button Section */}
       <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
-        <div className="image-border-wrapper" onClick={() => navigateTo('/results')}>
+        {/* Results Button */}
+        <div className="relative group" onClick={() => navigateTo('/results')}>
           <img
             src="/images/result-button-lg.png"
             alt="Results"
-            className="object-contain w-[250px] sm:w-[300px] lg:w-[350px] cursor-pointer transform transition duration-300 hover:scale-105"
+            className="object-contain w-[250px] sm:w-[300px] lg:w-[350px] cursor-pointer"
           />
+          {/* Bottom Right Label */}
+          <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs sm:text-sm px-3 py-1 rounded-md shadow-lg transition duration-300 transform group-hover:scale-105">
+            Click to See
+          </div>
         </div>
 
-        <div className="image-border-wrapper" onClick={() => navigateTo('/results')}>
+        {/* Life Button */}
+        <div className="relative group" onClick={() => navigateTo('/life')}>
           <img
             src="/images/life-button-lg.png"
             alt="Life"
-            className="object-contain w-[250px] sm:w-[300px] lg:w-[350px] cursor-pointer transform transition duration-300 hover:scale-105"
+            className="object-contain w-[250px] sm:w-[300px] lg:w-[350px] cursor-pointer"
           />
+          {/* Bottom Right Label */}
+          <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs sm:text-sm px-3 py-1 rounded-md shadow-lg transition duration-300 transform group-hover:scale-105">
+            Click to See
+          </div>
         </div>
 
-        <div className="image-border-wrapper" onClick={() => navigateTo('/results')}>
+        {/* Testimonials Button */}
+        <div className="relative group" onClick={() => navigateTo('/testimonials')}>
           <img
             src="/images/testimonial-button-lg.png"
             alt="Testimonials"
-            className="object-contain w-[250px] sm:w-[300px] lg:w-[350px] cursor-pointer transform transition duration-300 hover:scale-105"
+            className="object-contain w-[250px] sm:w-[300px] lg:w-[350px] cursor-pointer"
           />
+          {/* Bottom Right Label */}
+          <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs sm:text-sm px-3 py-1 rounded-md shadow-lg transition duration-300 transform group-hover:scale-105">
+            Click to See
+          </div>
         </div>
       </div>
     </div>

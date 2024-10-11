@@ -1,65 +1,64 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-const dummyStories = [
-  {
-    id: 1,
-    name: 'John Doe',
-    imageUrl: 'https://res.cloudinary.com/dm9iuudyc/image/upload/v1715771802/grogrip-testimonials/14_qpyfhd.png',
-    storyContent: 'John’s story goes here...'
-  },
-  {
-    id: 2,
-    name: 'Jane Smith',
-    imageUrl: 'https://res.cloudinary.com/dm9iuudyc/image/upload/v1715771801/grogrip-testimonials/11_ziafnb.png',
-    storyContent: 'Jane’s story goes here...'
-  },
-  {
-    id: 3,
-    name: 'Alice Johnson',
-    imageUrl: 'https://res.cloudinary.com/dm9iuudyc/image/upload/v1715771792/grogrip-testimonials/13_adwp2g.png',
-    storyContent: 'Alice’s story goes here...'
-  },
-  {
-    id: 4,
-    name: 'Bob Williams',
-    imageUrl: 'https://res.cloudinary.com/dm9iuudyc/image/upload/v1715771751/grogrip-testimonials/18_hfzdij.png',
-    storyContent: 'Bob’s story goes here...'
-  },
-];
-
-const StoryView = () => {
+const StoryView = ({ dummyStories }) => {
   const [selectedStoryIndex, setSelectedStoryIndex] = useState(0);
   const [progress, setProgress] = useState(0);
-  const storyDuration = 30; // Story duration in seconds
-
-  // Get the selected story from the index
+  const [storyDuration, setStoryDuration] = useState(30); // Default duration for image stories
+  const [isLoading, setIsLoading] = useState(true); // New state for loading
+  const videoRef = useRef(null); // Ref for video element
   const selectedStory = dummyStories[selectedStoryIndex];
 
-  // Effect to auto-advance to the next story every 30 seconds and increase progress
+  // Effect to handle story change
   useEffect(() => {
     setProgress(0); // Reset progress when a new story starts
+    setIsLoading(true); // Set loading to true when new story starts
 
+    // If the story is a video, adjust duration based on the video length
+    if (selectedStory.imageUrl.endsWith('.mp4') && videoRef.current) {
+      const handleLoadedMetadata = () => {
+        setStoryDuration(videoRef.current.duration); // Set story duration to the video duration
+        setIsLoading(false); // Hide loader once video metadata is loaded
+      };
+
+      const handleTimeUpdate = () => {
+        const currentTime = videoRef.current.currentTime;
+        const duration = videoRef.current.duration;
+        setProgress((currentTime / duration) * 100); // Update progress based on video playback
+      };
+
+      videoRef.current.addEventListener('loadedmetadata', handleLoadedMetadata);
+      videoRef.current.addEventListener('timeupdate', handleTimeUpdate);
+
+      // Clean up listeners when component unmounts or story changes
+      return () => {
+        if (videoRef.current) { // Ensure videoRef.current is not null before removing listeners
+          videoRef.current.removeEventListener('loadedmetadata', handleLoadedMetadata);
+          videoRef.current.removeEventListener('timeupdate', handleTimeUpdate);
+        }
+      };
+    }
+
+    // For image stories, fallback to the existing timer-based progress system
     const interval = setInterval(() => {
       setProgress((prevProgress) => {
         if (prevProgress >= 100) {
-          clearInterval(interval); // Clear interval when the progress reaches 100%
+          clearInterval(interval);
           return 100;
         }
         return prevProgress + (100 / (storyDuration * 10)); // Increase progress every 100ms
       });
-    }, 100); // Update every 100ms
+    }, 100);
 
     const timer = setTimeout(() => {
       goToNextStory();
-    }, storyDuration * 1000); // Switch story after 30 seconds
+    }, storyDuration * 1000); // Switch story after the duration
 
-    // Clean up the timer and interval when the component unmounts or when the story changes
     return () => {
       clearTimeout(timer);
       clearInterval(interval);
     };
-  }, [selectedStoryIndex]);
+  }, [selectedStoryIndex, storyDuration]);
 
   const goToNextStory = () => {
     if (selectedStoryIndex < dummyStories.length - 1) {
@@ -78,10 +77,8 @@ const StoryView = () => {
     const clickedX = e.clientX;
 
     if (clickedX < screenWidth / 2) {
-      // Clicked on the left side of the screen
       goToPreviousStory();
     } else {
-      // Clicked on the right side of the screen
       goToNextStory();
     }
   };
@@ -108,7 +105,7 @@ const StoryView = () => {
         ))}
       </div>
 
-      {/* Profile Section - Always Visible */}
+      {/* Profile Section */}
       <div className="flex items-center w-full max-w-lg space-x-4 mb-4">
         <img
           src="https://res.cloudinary.com/dm9iuudyc/image/upload/v1715771522/samples/people/smiling-man.jpg"
@@ -123,12 +120,32 @@ const StoryView = () => {
 
       {/* Story Content View */}
       <div className="w-full max-w-lg bg-gray-900 rounded-xl overflow-hidden relative flex-grow">
-        {/* Story Image */}
-        <img
-          src={selectedStory.imageUrl}
-          alt={`${selectedStory.name}'s story`}
-          className="w-full h-full object-cover"
-        />
+        {/* Loading Spinner */}
+        {isLoading && (
+          <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
+            <div className="w-12 h-12 border-4 border-t-4 border-gray-400 rounded-full animate-spin"></div>
+          </div>
+        )}
+
+        {selectedStory.imageUrl.endsWith('.mp4') ? (
+          <video
+            ref={videoRef}
+            src={selectedStory.imageUrl}
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            playsInline
+            onEnded={goToNextStory} // Go to the next story when the video ends
+            onLoadedData={() => setIsLoading(false)} // Hide loader once video is loaded
+          />
+        ) : (
+          <img
+            src={selectedStory.imageUrl}
+            alt={`${selectedStory.name}'s story`}
+            className="w-full h-full object-cover"
+            onLoad={() => setIsLoading(false)} // Hide loader once image is loaded
+          />
+        )}
       </div>
     </div>
   );
