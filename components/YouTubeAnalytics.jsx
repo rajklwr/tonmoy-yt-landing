@@ -3,7 +3,7 @@ import React from 'react';
 
 const YouTubeAnalytics = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-orange-500 to-blue-900 flex flex-col items-center justify-center bg-cover bg-center"
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-r from-orange-500 to-blue-900 flex flex-col items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: 'url("/images/bg1.png")' }}
     >
       <div className="relative w-full max-w-6xl px-6 py-8 text-white">

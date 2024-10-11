@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Script from 'next/script';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,6 +24,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+                <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload" // Load the script lazily
+        />
         {children}
       </body>
     </html>

@@ -55,7 +55,7 @@ const FAQ = () => {
 
   return (
     <div
-      className="md:min-h-screen bg-gradient-to-b from-black to-blue-900 py-8 sm:py-12 flex flex-col items-center bg-cover bg-center px-4 sm:px-6 lg:px-8"
+      className=" bg-gradient-to-b from-black to-blue-900 py-8 sm:py-12 flex flex-col items-center bg-cover bg-center px-4 sm:px-6 lg:px-8"
       style={{ backgroundImage: 'url("/images/bg5.png")' }}
     >
       {/* Title */}
@@ -99,7 +99,7 @@ const FAQ = () => {
       </div>
 
       {/* FAQ Items */}
-      <div className="w-full max-w-3xl text-left space-y-4"> {/* Added spacing between FAQ items */}
+      <div className="w-full max-w-5xl text-left space-y-4"> {/* Added spacing between FAQ items */}
         {faqData.map((faq, index) => (
           <FAQItem key={index} question={faq.question} answer={faq.answer} />
         ))}

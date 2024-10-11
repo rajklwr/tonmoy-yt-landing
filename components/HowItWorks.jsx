@@ -4,7 +4,7 @@ import { UserIcon, CurrencyDollarIcon, ShieldCheckIcon } from '@heroicons/react/
 
 const HowItWorks = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-blue-900 py-8 flex items-center justify-center overflow-hidden bg-cover bg-center"
+    <div className=" bg-gradient-to-b from-black to-blue-900 py-8 flex items-center justify-center overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: 'url("/images/bg3.png")' }} 
     >
       <div className="w-full max-w-7xl flex flex-col lg:flex-row justify-between items-center px-4 sm:px-6 lg:px-12 py-6 lg:py-12 text-white space-y-8 lg:space-y-0 lg:space-x-8">

@@ -21,11 +21,10 @@ export default function HomePage() {
   return (
     <div>
       <YouTubeAnalytics />
-      <YouTubeChannels scrollToBookYourCall={scrollToBookYourCall} /> {/* Pass the scroll function as a prop */}
+      <YouTubeChannels scrollToBookYourCall={scrollToBookYourCall} />
       <HowItWorks />
       <WhatWeHaveDone />
       <FAQ />
-      {/* Reference the BookYourCall component */}
       <div ref={bookCallRef}>
         <BookYourCall />
       </div>

@@ -12,7 +12,7 @@ const WhatWeHaveDone = () => {
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-b from-black to-blue-900 py-12 flex flex-col items-center bg-cover bg-center px-4 sm:px-6 lg:px-8"
+      className=" bg-gradient-to-b from-black to-blue-900 py-12 flex flex-col items-center bg-cover bg-center px-4 sm:px-6 lg:px-8"
       style={{ backgroundImage: 'url("/images/bg4.png")' }}
     >
       {/* Header Section */}
