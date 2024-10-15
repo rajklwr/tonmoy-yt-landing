@@ -30,7 +30,7 @@ const BookYourCall = () => {
             tabIndex="-1"  // Make it focusable
             className="calendly-inline-widget"
             data-url="https://calendly.com/ytautomationtonmoy/1-1-on-strategy-call-with-tonmoy?"
-            style={{ minWidth: '350px', height: '500px', overflowY: 'auto' }}
+            style={{ minWidth: '350px', height: '1000px', overflowY: 'auto' }}
           ></div>
           <p className=" invisible sm:visible text-white mt-4">Please scroll down to see more of the booking widget.</p>
         </div>
