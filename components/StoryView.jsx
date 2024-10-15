@@ -108,7 +108,7 @@ const StoryView = ({ dummyStories }) => {
       {/* Profile Section */}
       <div className="flex items-center w-full max-w-lg space-x-4 mb-4">
         <img
-          src="https://res.cloudinary.com/dm9iuudyc/image/upload/v1715771522/samples/people/smiling-man.jpg"
+          src="https://res.cloudinary.com/dm9iuudyc/image/upload/v1729015248/tonmoy-yt-landing/Profile/IMG_2190_ypqjsr.heic"
           alt="Tonmoy"
           className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-green-500 object-cover"
         />
