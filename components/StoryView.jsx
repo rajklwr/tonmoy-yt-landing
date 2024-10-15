@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+import { CheckCircleIcon } from '@heroicons/react/24/solid'; // Import from Heroicons v2
 
 const StoryView = ({ dummyStories }) => {
   const [selectedStoryIndex, setSelectedStoryIndex] = useState(0);
@@ -32,7 +33,7 @@ const StoryView = ({ dummyStories }) => {
 
       // Clean up listeners when component unmounts or story changes
       return () => {
-        if (videoRef.current) { // Ensure videoRef.current is not null before removing listeners
+        if (videoRef.current) {
           videoRef.current.removeEventListener('loadedmetadata', handleLoadedMetadata);
           videoRef.current.removeEventListener('timeupdate', handleTimeUpdate);
         }
@@ -59,6 +60,25 @@ const StoryView = ({ dummyStories }) => {
       clearInterval(interval);
     };
   }, [selectedStoryIndex, storyDuration]);
+
+  // Event listener for keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') {
+        goToPreviousStory();
+      } else if (e.key === 'ArrowRight') {
+        goToNextStory();
+      }
+    };
+
+    // Add event listener for keydown
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedStoryIndex]);
 
   const goToNextStory = () => {
     if (selectedStoryIndex < dummyStories.length - 1) {
@@ -108,13 +128,17 @@ const StoryView = ({ dummyStories }) => {
       {/* Profile Section */}
       <div className="flex items-center w-full max-w-lg space-x-4 mb-4">
         <img
-          src="https://res.cloudinary.com/dm9iuudyc/image/upload/v1729015248/tonmoy-yt-landing/Profile/IMG_2190_ypqjsr.heic"
+          src="https://res.cloudinary.com/dm9iuudyc/image/upload/v1729017409/tonmoy-yt-landing/Profile/Untitled_design_6_skhj88.png"
           alt="Tonmoy"
           className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-green-500 object-cover"
         />
         <div>
-          <h2 className="text-lg sm:text-xl font-bold">Tonmoy Ghosh</h2>
-          <p className="text-sm sm:text-base text-gray-300">Live now</p>
+          <div className="flex items-center">
+            <h2 className="text-lg sm:text-xl font-bold">Tonmoy Ghosh</h2>
+            {/* Verified Badge */}
+            <CheckCircleIcon className="ml-2 w-5 h-5 sm:w-6 sm:h-6 text-blue-500" />
+          </div>
+          <p className="text-sm sm:text-base text-gray-300">{dummyStories[0].timestamp}</p>
         </div>
       </div>
 
