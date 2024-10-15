@@ -32,7 +32,7 @@ const BookYourCall = () => {
             data-url="https://calendly.com/ytautomationtonmoy/1-1-on-strategy-call-with-tonmoy?"
             style={{ minWidth: '350px', height: '1000px', overflowY: 'auto' }}
           ></div>
-          <p className=" invisible sm:visible text-white mt-4">Please scroll down to see more of the booking widget.</p>
+          {/* <p className=" invisible sm:visible text-white mt-4">Please scroll down to see more of the booking widget.</p> */}
         </div>
 
         {/* Right Section (Contact Info) */}

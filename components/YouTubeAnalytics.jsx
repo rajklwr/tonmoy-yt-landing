@@ -1,12 +1,12 @@
-// components/YouTubeAnalytics.jsx
 import React from 'react';
+import { FaChevronDown } from 'react-icons/fa'; // Using FontAwesome icon
 
 const YouTubeAnalytics = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-gradient-to-r from-orange-500 to-blue-900 flex flex-col items-center justify-center bg-cover bg-center"
+    <div className="min-h-screen relative overflow-x-hidden bg-gradient-to-r from-orange-500 to-blue-900 flex flex-col items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: 'url("/images/bg1.png")' }}
     >
-      <div className="relative w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-8 text-white">
+      <div className=" w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-8 text-white">
         {/* Image section */}
         <div className="flex justify-center items-center mb-4 sm:mb-6 md:mb-8">
           <img
@@ -22,6 +22,11 @@ const YouTubeAnalytics = () => {
             DONE-FOR-YOU <br />
             Faceless YouTube Channels
           </h1>
+        </div>
+        
+        {/* Animated Arrow */}
+        <div className=" mt-8 flex justify-center sm:hidden">
+          <FaChevronDown className="text-4xl animate-bounce text-white" />
         </div>
       </div>
     </div>
