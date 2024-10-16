@@ -12,7 +12,7 @@ const BookYourCall = () => {
       style={{ backgroundImage: 'url(\'/images/bg6.png\')' }}
     >
       {/* Main Container */}
-      <div className="w-full max-w-6xl flex flex-col lg:flex-row justify-between lg:items-start space-y-12 lg:space-y-0 lg:space-x-16 p-8">
+      <div className="w-full max-w-6xl flex flex-col lg:flex-row justify-between lg:items-start space-y-12 lg:space-y-0 lg:space-x-16 p-4">
         
         {/* Left Section (Calendly) */}
         <div className="flex-1 lg:flex-[0.65] w-full">
@@ -29,9 +29,14 @@ const BookYourCall = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 lg:flex-[0.35] w-full text-white sm:space-y-32 sm:mt-[500px] ">
+        <div className="flex-1 lg:flex-[0.35] w-full text-white sm:space-y-32 sm:mt-[500px] "
+        >
           {/* Message Content */}
-          <div className="hidden lg:block bg-white bg-opacity-20 p-4 rounded-md mt-[150px] ">
+          <div
+          //  className="hidden lg:block bg-white bg-opacity-20 p-4 rounded-md mt-[150px] "
+          className="flex-1 hidden lg:block p-4 sm:p-6 lg:p-8 bg-opacity-20 bg-gradient-to-b  from-white/30 to-black/40 mt-[150px]  rounded-2xl shadow-2xl border-2 border-white flex-grow relative"
+          style={{ transform: 'translateY(20px)', opacity: 0, transition: 'all 0.8s ease-in-out', animation: 'moveInUp 1s forwards' }}
+           >
             <p>From this calendar, you can choose your convenient time to schedule a Zoom call.</p>
             <p>Feel free to let us know, and we&apos;ll make sure to accommodate your schedule. 💪</p>
             <p>Once you book the call, send me a message on any of my social platforms and I&apos;ll confirm the call from my end.</p>
