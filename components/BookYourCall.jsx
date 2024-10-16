@@ -37,8 +37,8 @@ const BookYourCall = () => {
           className="flex-1 hidden lg:block p-4 sm:p-6 lg:p-8 bg-opacity-20 bg-gradient-to-b  from-white/30 to-black/40 mt-[150px]  rounded-2xl shadow-2xl border-2 border-white flex-grow relative"
           style={{ transform: 'translateY(20px)', opacity: 0, transition: 'all 0.8s ease-in-out', animation: 'moveInUp 1s forwards' }}
            >
-            <p>From this calendar, you can choose your convenient time to schedule a Zoom call.</p>
-            <p>Feel free to let us know, and we&apos;ll make sure to accommodate your schedule. 💪</p>
+            <p>From this calendar, you can choose your convenient time to schedule a Zoom call.</p> <br/>
+            <p>Feel free to let us know, and we&apos;ll make sure to accommodate your schedule. 💪</p> <br/>
             <p>Once you book the call, send me a message on any of my social platforms and I&apos;ll confirm the call from my end.</p>
           </div>
 
