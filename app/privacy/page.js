@@ -48,7 +48,7 @@ const Privacy = () => {
             <p>YT Growth Secrets Private Limited</p>
             <p>Registered Office: Mahavir Enclave Part 2, New Delhi, India</p>
             <p>Email: support@ytgrowthsecrets.com</p>
-            <p>Phone: +91-XXXXXXXXXX</p>
+            <p>Phone: +91 6000205657</p>
           </div>
 
           <p className="text-sm text-gray-400 mt-4">
