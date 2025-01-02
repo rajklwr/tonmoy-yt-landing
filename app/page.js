@@ -7,6 +7,7 @@ import HowItWorks from '@/components/HowItWorks';
 import WhatWeHaveDone from '@/components/WhatWeHaveDone';
 import FAQ from '@/components/FAQ';
 import BookYourCall from '@/components/BookYourCall';
+import Footer from '@/components/Footer';
 
 export default function HomePage() {
   const bookCallRef = useRef(null); // Create a reference for the BookYourCall component
@@ -28,6 +29,7 @@ export default function HomePage() {
       <div ref={bookCallRef}>
         <BookYourCall />
       </div>
+      <Footer/>
     </div>
   );
 }
