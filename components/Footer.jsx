@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = (bg) => {
   return (
-    <footer className="bg-gradient-to-r from-black to-gray-800 text-white p-4 sm:p-8">
+    <footer className={`${bg ? '' : 'bg-gradient-to-r from-black to-gray-800'} text-white p-4 sm:p-8`}>
       <div className="max-w-7xl mx-auto text-center">
         <p className="text-base sm:text-base mb-4">
           DISCLAIMER
