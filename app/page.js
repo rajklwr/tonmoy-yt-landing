@@ -8,6 +8,7 @@ import WhatWeHaveDone from '@/components/WhatWeHaveDone';
 import FAQ from '@/components/FAQ';
 import BookYourCall from '@/components/BookYourCall';
 import Footer from '@/components/Footer';
+import { faqData } from '@/data/faq-data';
 
 export default function HomePage() {
   const bookCallRef = useRef(null); 
@@ -24,7 +25,9 @@ export default function HomePage() {
       <YouTubeChannels scrollToBookYourCall={scrollToBookYourCall} />
       <HowItWorks />
       <WhatWeHaveDone />
-      <FAQ />
+      <FAQ 
+      faqData={faqData}
+      />
       <div ref={bookCallRef}>
         <BookYourCall />
       </div>

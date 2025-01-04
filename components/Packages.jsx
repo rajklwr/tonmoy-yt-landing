@@ -1,4 +1,3 @@
-// components/Packages.js
 import PackageBox from './PackageBox';
 import UnderlineHeader from './UnderlineHeader';
 

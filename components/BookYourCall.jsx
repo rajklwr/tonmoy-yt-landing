@@ -1,10 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import {
-  FaInstagram,
-  FaFacebook
-} from "react-icons/fa";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 
 const BookYourCall = () => {
@@ -71,13 +68,25 @@ const BookYourCall = () => {
             {/* Instagram Section */}
             <div className="flex flex-col">
               <h2 className="text-lg font-bold">INSTAGRAM</h2>
-              <p className="text-lg">@tonmoyghosh__</p>
+              <a
+                href="https://www.instagram.com/tonmoyghosh__"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-bold bg-gradient-to-r from-white via-pink-400 to-purple-400 text-transparent bg-clip-text hover:underline"
+              >
+                @tonmoyghosh__
+              </a>
             </div>
 
             {/* Email Section */}
             <div className="flex flex-col">
               <h2 className="text-lg font-bold">Email</h2>
-              <p className="text-lg">ytgrowthsecrets21@gmail.com</p>
+              <a
+                href="mailto:ytgrowthsecrets21@gmail.com"
+                className="text-lg font-bold bg-gradient-to-r from-white via-red-400 to-orange-400 text-transparent bg-clip-text hover:underline"
+              >
+                ytgrowthsecrets21@gmail.com
+              </a>
             </div>
 
             {/* Social Section */}

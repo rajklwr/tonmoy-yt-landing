@@ -3,7 +3,6 @@
 
 import React, { useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import UnderlineHeader from "./UnderlineHeader";
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +18,9 @@ const FAQItem = ({ question, answer }) => {
           {question}
         </h2>
         {isOpen ? (
-          <ChevronUpIcon className="w-6 h-6 text-white" />
+          <ChevronUpIcon className="w-6 h-6 text-white flex-shrink-0" />
         ) : (
-          <ChevronDownIcon className="w-6 h-6 text-white" />
+          <ChevronDownIcon className="w-6 h-6 text-white flex-shrink-0" />
         )}
       </div>
 
@@ -35,24 +34,7 @@ const FAQItem = ({ question, answer }) => {
   );
 };
 
-const FAQ = () => {
-  const faqData = [
-    {
-      question: "Who Owns The Channel?",
-      answer:
-        "You have complete ownership of not only the channel, but anything produced within our service. This means anything from our videos, down to your channel logo.",
-    },
-    {
-      question: "When Can I See Results?",
-      answer:
-        "We believe setting the right expectations is crucial for success. Results can vary based on many factors, but our program is designed to allow enough time to achieve the income most clients are looking for.",
-    },
-    {
-      question: "How Do I Know This Is Legit?",
-      answer:
-        "We put everything in writing to ensure we're on the same page and meet expectations. We prefer calls because it's easier to show who we are, rather than relying on a simple website.",
-    },
-  ];
+const FAQ = ({faqData}) => {
 
   return (
     <div
@@ -104,7 +86,7 @@ const FAQ = () => {
       <div className="w-full max-w-5xl text-left space-y-4">
         {" "}
         {/* Added spacing between FAQ items */}
-        {faqData.map((faq, index) => (
+        {faqData?.map((faq, index) => (
           <FAQItem key={index} question={faq.question} answer={faq.answer} />
         ))}
       </div>

@@ -2,7 +2,7 @@ export default function Budget() {
   return (
     <section className="bg-gradient-to-r from-black to-gray-800 text-white py-16"
     style={{
-      backgroundImage: 'url("/images/bg1.png")', // Ensure this is the correct path to your background
+      backgroundImage: 'url("/images/bg2.png")', // Ensure this is the correct path to your background
       backgroundAttachment: 'fixed', // Makes the background image stay fixed
     }}
     >
@@ -12,12 +12,12 @@ export default function Budget() {
           <img
             src="/images/tonmoy.png" // Replace with the correct image path
             alt="Pricing Package"
-            className="rounded-lg scale-[1.2] sm:scale-[1.4]"
+            className="rounded-lg scale-[1.1] sm:scale-[1.4]"
           />
         </div>
 
         {/* Right Text Section */}
-        <div className="p-6 mt-4 sm:mt-0 sm:p-8 lg:p-10 rounded-3xl shadow-lg relative border-2 border-gray-400 w-full md:w-1/2 lg:w-[130%] transform lg:translate-x-[10%] lg:border-r-transparent">
+        <div className="p-6 mt-4 sm:mt-0  sm:p-8 lg:p-10 rounded-3xl shadow-lg relative border-2 border-gray-400 w-full md:w-1/2 lg:w-[130%] transform lg:translate-x-[10%] lg:border-r-transparent">
           <h2 className="text-3xl font-bold mb-4">
             DONE-FOR-YOU <br /> FACEBOOK YOUTUBE CHANNELS
           </h2>

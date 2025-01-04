@@ -6,13 +6,14 @@ import WhatWeHaveDone from "@/components/WhatWeHaveDone";
 import FAQ from "@/components/FAQ";
 import Budget from "@/components/Budget";
 import Packages from "@/components/Packages";
+import { PackagesfaqData } from "@/data/faq-data";
 
 const Pricing = () => {
   return (
     <div>
       <Budget />
       <Packages />
-      <FAQ />
+      <FAQ faqData={PackagesfaqData} />
       <WhatWeHaveDone />
       <BookYourCall />
       <Footer />
