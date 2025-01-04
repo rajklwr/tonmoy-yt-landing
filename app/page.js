@@ -10,10 +10,9 @@ import BookYourCall from '@/components/BookYourCall';
 import Footer from '@/components/Footer';
 
 export default function HomePage() {
-  const bookCallRef = useRef(null); // Create a reference for the BookYourCall component
+  const bookCallRef = useRef(null); 
 
   const scrollToBookYourCall = () => {
-    // Smooth scroll to BookYourCall section
     if (bookCallRef.current) {
       bookCallRef.current.scrollIntoView({ behavior: 'smooth' });
     }
