@@ -21,7 +21,7 @@ const Packages = () => {
       logo: '/images/premium-logo.png',
       altText: 'Premium Package',
       title: 'Premium',
-      price: '$85',
+      price: '$120',
       description: 'Super premium videos with highly engaging scripts, human voice-overs, animations, overlays, and sound effects for optimal success.',
     },
   ];
