@@ -35,6 +35,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RG5GEG7YQJ"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RG5GEG7YQJ');
+          `}
+        </script>
         <meta name="google-site-verification" content="cwjEdqTQKylyhS76nIEduQe4rIENTjg3Ii-5urEwuew" />
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords.join(", ")} />
