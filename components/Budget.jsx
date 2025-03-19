@@ -19,7 +19,7 @@ export default function Budget() {
         {/* Right Text Section */}
         <div className="p-6 mt-4 sm:mt-0  sm:p-8 lg:p-10 rounded-3xl shadow-lg relative border-2 border-gray-400 w-full md:w-1/2 lg:w-[130%] transform lg:translate-x-[10%] lg:border-r-transparent">
           <h2 className="text-3xl font-bold mb-4">
-            DONE-FOR-YOU <br /> FACEBOOK YOUTUBE CHANNELS
+            DONE-FOR-YOU <br /> FACELESS YOUTUBE CHANNELS
           </h2>
           <p className="text-lg leading-relaxed mb-6">
             We know that every client has different needs and budgets, so we&apos;ve
