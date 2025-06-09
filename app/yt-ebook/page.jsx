@@ -41,7 +41,7 @@ export default function JoinFreeEbookPage() {
 
         {/* Headline */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight text-white drop-shadow-[0_2px_6px_rgba(255,255,255,0.2)]">
-          Download My Free E-Book
+          Download My E-Book
         </h1>
         <p className="text-xl sm:text-2xl font-semibold text-gray-200 mb-6">
           “The Zero Dollar YouTube Blueprint”
