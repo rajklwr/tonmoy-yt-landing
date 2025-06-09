@@ -113,7 +113,7 @@ export default function JoinFreeEbookPage() {
           <p>
             I&apos;m here to build a real community of creators who take action.
             <br />
-            So, if this helped you in any way — I’d love to hear from you.
+            So, if this helped you in any way — I&apos;d love to hear from you.
             <br />
             And I&apos;d love to give you more.{" "}
             <strong className="text-white">
