@@ -31,11 +31,12 @@ export default function JoinFreeEbookPage() {
       <div className="w-full max-w-2xl text-center text-white animate-fade-in">
         {/* Icon */}
         <div className="flex justify-center mb-5">
-          <Image
-            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-            alt="Instagram"
-            width={20}
-            height={20}
+          <img
+            src="https://img.icons8.com/ios-filled/100/ffffff/open-book--v2.png"
+            alt="E-Book Icon"
+            width={64}
+            height={64}
+            className="animate-pulse drop-shadow-md"
           />
         </div>
 
