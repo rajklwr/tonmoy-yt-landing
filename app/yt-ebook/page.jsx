@@ -94,7 +94,7 @@ export default function JoinFreeEbookPage() {
             you —
           </p>
 
-          <p className="text-white font-semibold">💬 Here’s all I ask:</p>
+          <p className="text-white font-semibold">💬 Here&apos;s all I ask:</p>
 
           <p>
             Go to my latest{" "}
@@ -103,21 +103,21 @@ export default function JoinFreeEbookPage() {
           </p>
 
           <p className="text-white">
-            📩 I’ll also send you my paid eBook — absolutely free.
+            📩 I&apos;ll also send you my paid eBook — absolutely free.
           </p>
 
           <p className="text-green-400 font-semibold">
-            ✅ That’s it. No upsell. No strings.
+            ✅ That&apos;s it. No upsell. No strings.
           </p>
 
           <p>
-            I’m here to build a real community of creators who take action.
+            I&apos;m here to build a real community of creators who take action.
             <br />
             So, if this helped you in any way — I’d love to hear from you.
             <br />
-            And I’d love to give you more.{" "}
+            And I&apos;d love to give you more.{" "}
             <strong className="text-white">
-              The journey’s just getting started. 💪
+              The journey&apos;s just getting started. 💪
             </strong>
           </p>
         </div>
@@ -131,6 +131,19 @@ export default function JoinFreeEbookPage() {
           🚀 Follow me for free monthly drops, YouTube systems, and case studies
           that actually work.
         </p>
+
+        <div className="mt-8 text-center text-xs text-gray-500 px-4 max-w-2xl mx-auto">
+          <p className="mb-2">
+            <strong>DISCLAIMER</strong>
+            <br />
+            NOT FACEBOOK™: This site is not a part of the Facebook™ website or
+            Facebook Inc. Additionally, this site is NOT endorsed by Facebook™
+            in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc.
+          </p>
+          <p>
+            Copyright © 2025 YT Growthsecrets Pvt Ltd – All rights reserved.
+          </p>
+        </div>
       </div>
     </div>
   );
