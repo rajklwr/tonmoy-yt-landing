@@ -12,7 +12,7 @@ module.exports = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        monstrate: ['Monstrate', 'sans-serif'],
+        monstrate: ["Monstrate", "sans-serif"],
       },
     },
   },

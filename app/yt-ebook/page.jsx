@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function JoinFreeEbookPage() {
   const [typedText, setTypedText] = useState("");
@@ -30,12 +31,11 @@ export default function JoinFreeEbookPage() {
       <div className="w-full max-w-2xl text-center text-white animate-fade-in">
         {/* Icon */}
         <div className="flex justify-center mb-5">
-          <img
-            src="https://img.icons8.com/ios-filled/100/ffffff/open-book--v2.png"
-            alt="E-Book Icon"
-            width={64}
-            height={64}
-            className="animate-pulse drop-shadow-md"
+          <Image
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+            alt="Instagram"
+            width={20}
+            height={20}
           />
         </div>
 
@@ -67,45 +67,64 @@ export default function JoinFreeEbookPage() {
           </ul>
         </div>
 
-        {/* CTA Button
+        {/* CTA Button */}
         <div className="mb-8">
           <a
-            href="https://your-ebook-download-link.com"
+            href="https://www.dropbox.com/scl/fi/73r7zkbk6872zl9v03eyy/Tonmoy-The-Zero-Dollar-YouTube-Blueprint-Sponsored-by-GroGrip.pdf?rlkey=o0y4zft94b3o8l8yyki0ztb00&st=n25atq6o&dl=1"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block w-full sm:w-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-pink-500 hover:to-indigo-500 text-white font-semibold py-3 px-6 sm:px-8 rounded-full transition duration-300 shadow-xl hover:scale-105"
           >
             📥 Download The E-Book Now
           </a>
-        </div> */}
+        </div>
 
-        <div className="mb-10 text-center space-y-4">
-          {/* Primary CTA */}
-          <a
-            href="https://your-payment-link.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 hover:from-emerald-600 hover:to-green-500 text-white text-lg font-bold py-3 px-8 rounded-full shadow-xl hover:scale-105 transition-transform"
-          >
-            💰 Get It Now – Only $1.99
-          </a>
-
-          {/* Price Disclaimer */}
-          <p className="text-sm sm:text-base text-gray-400">
-            ⏳ After 30 Days —{" "}
-            <span className="text-red-400 font-semibold line-through">$99</span>
+        {/* Connection & Feedback Section */}
+        <div className="text-left text-gray-300 mb-4 text-sm sm:text-base space-y-4 px-2 sm:px-0 max-w-xl mx-auto">
+          <p className="text-center text-base sm:text-lg text-white font-semibold">
+            ✉️ Let&apos;s Stay Connected — Your Feedback Means Everything!
           </p>
 
-          {/* Motivation Message */}
-          <p className="text-xs sm:text-sm text-gray-500 italic max-w-md mx-auto">
-            Every value has its own price — I’m charging this because it’s only
-            for <strong className="text-white">serious action takers</strong>.
+          <p>
+            If you truly found value in this eBook…
+            <br />
+            If it helped you understand the YouTube system better…
+            <br />
+            And if you believe this could be the beginning of something big for
+            you —
+          </p>
+
+          <p className="text-white font-semibold">💬 Here’s all I ask:</p>
+
+          <p>
+            Go to my latest{" "}
+            <strong className="text-white">Reel on Instagram</strong>, leave a
+            comment sharing your honest thoughts or review about this eBook.
+          </p>
+
+          <p className="text-white">
+            📩 I’ll also send you my paid eBook — absolutely free.
+          </p>
+
+          <p className="text-green-400 font-semibold">
+            ✅ That’s it. No upsell. No strings.
+          </p>
+
+          <p>
+            I’m here to build a real community of creators who take action.
+            <br />
+            So, if this helped you in any way — I’d love to hear from you.
+            <br />
+            And I’d love to give you more.{" "}
+            <strong className="text-white">
+              The journey’s just getting started. 💪
+            </strong>
           </p>
         </div>
 
         {/* Footer */}
         <p className="text-sm text-gray-500 italic mb-1">
-          🎯 I’m documenting a full 30-day faceless channel — scripts,
+          🎯 I&apos;m documenting a full 30-day faceless channel — scripts,
           thumbnails, videos, and real results.
         </p>
         <p className="text-xs sm:text-sm text-gray-500">
