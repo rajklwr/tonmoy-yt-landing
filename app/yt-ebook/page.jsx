@@ -71,7 +71,7 @@ export default function JoinFreeEbookPage() {
         {/* CTA Button */}
         <div className="mb-8">
           <a
-            href="https://www.dropbox.com/scl/fi/73r7zkbk6872zl9v03eyy/Tonmoy-The-Zero-Dollar-YouTube-Blueprint-Sponsored-by-GroGrip.pdf?rlkey=o0y4zft94b3o8l8yyki0ztb00&st=n25atq6o&dl=0"
+            href="https://drive.google.com/uc?export=download&id=1y1gdfg1P7z2JLDY7naF5d387b1Xc5oZk"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block w-full sm:w-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-pink-500 hover:to-indigo-500 text-white font-semibold py-3 px-6 sm:px-8 rounded-full transition duration-300 shadow-xl hover:scale-105"
