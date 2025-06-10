@@ -71,7 +71,7 @@ export default function JoinFreeEbookPage() {
         {/* CTA Button */}
         <div className="mb-8">
           <a
-            href="https://drive.google.com/uc?export=download&id=1y1gdfg1P7z2JLDY7naF5d387b1Xc5oZk"
+            href="https://drive.google.com/file/d/1y1gdfg1P7z2JLDY7naF5d387b1Xc5oZk/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block w-full sm:w-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-pink-500 hover:to-indigo-500 text-white font-semibold py-3 px-6 sm:px-8 rounded-full transition duration-300 shadow-xl hover:scale-105"
