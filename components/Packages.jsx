@@ -8,6 +8,7 @@ const Packages = () => {
       altText: 'Basic Package',
       title: 'Basic',
       price: '$70',
+      minutes: "8-10 minutes",
       description: 'Basic videos with original scripts, human voice-overs, and normal cuts and pastes, including background music.',
     },
     {
@@ -15,6 +16,7 @@ const Packages = () => {
       altText: 'Standard Package',
       title: 'Standard',
       price: '$85',
+      minutes: "13-15 minutes",
       description: 'Standard videos with engaging original scripts, human voice-overs, overlays, sound effects, and matching background music.',
     },
     {
@@ -22,6 +24,7 @@ const Packages = () => {
       altText: 'Premium Package',
       title: 'Premium',
       price: '$120',
+      minutes: "18-20 minutes",
       description: 'Super premium videos with highly engaging scripts, human voice-overs, animations, overlays, and sound effects for optimal success.',
     },
   ];
@@ -43,6 +46,7 @@ const Packages = () => {
               altText={pkg.altText}
               title={pkg.title}
               price={pkg.price}
+              minutes={pkg.minutes}
               description={pkg.description}
             />
           ))}
